@@ -1,12 +1,25 @@
 const test = QUnit.test;
 
-test('time to test a function', function(assert) {
-    //Arrange
-    // Set up your parameters and expectations
+function template(todo) {
 
+}
+
+test('is true if checked', function(assert) {
+    //Arrange
+    const todo = {
+        task: 'Learn templates',
+        completed: true
+    };
+
+    const expected = /*html*/`
+        <li>
+            <input type="checkbox" checked> <span>Learn templates</span>
+        </li>
+`;
     //Act 
-    // Call the function you're testing and set the result to a const
+    const html = template(todo);
+    
 
     //Assert
-    assert.equal(true, false);
+    assert.htmlEqual(html, expected);
 });
