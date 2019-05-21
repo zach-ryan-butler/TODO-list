@@ -1,18 +1,5 @@
+import template from '../src/todo-template.js';
 const test = QUnit.test;
-
-function template(todo) {
-    let checked = '';
-
-    if(todo.completed) {
-        checked = 'checked';
-    }
-
-    return /*html*/`
-    <li>
-        <input type="checkbox" ${checked}> <span>${todo.task}</span>
-    </li>
-`;
-}
 
 test('is true is checked', function(assert) {
     //Arrange
